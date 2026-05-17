@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Проекты 10В класса</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .project-btn {
+            background: #1e293b;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 12px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.2s;
+            text-align: center;
+        }
+        .project-btn:hover {
+            background: #3b82f6;
+            transform: scale(1.02);
+        }
+        
+        .detail-page {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .back-btn {
+            background: #475569;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        .back-btn:hover {
+            background: #1e293b;
+        }
+        .photo {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .photo img {
+            max-width: 100%;
+            border-radius: 16px;
+            max-height: 300px;
+        }
+        .info-box {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 16px;
+            margin: 15px 0;
+            line-height: 1.5;
+        }
+        .link-btn {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            margin: 10px 10px 10px 0;
+        }
+        .pdf-btn {
+            display: inline-block;
+            background: #dc2626;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            margin: 10px 10px 10px 0;
+        }
+        .pdf-btn:hover {
+            background: #b91c1c;
+        }
+        .buttons-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        h1 {
+            text-align: center;
+            color: #0f172a;
+        }
+        .sub {
+            text-align: center;
+            color: #475569;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+   
+    <div id="mainScreen">
+        <h1>Проекты 10В класса 2025/26 года</h1>
+        <div class="sub">Выбери проект, который хочешь посмотреть!</div>
+        <div class="grid" id="buttonsGrid"></div>
+    </div>
+
+    
+    <div id="projectScreen" style="display:none;">
+        <div class="detail-page">
+            <button class="back-btn" onclick="showMain()">Назад ко всем проектам</button>
+            <div id="projectContent"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+   
+    const projects = [
+        { num:1, title:"Методы измерения физических величин", author:"Юрий Чекглаков", info:"Целью настоящего проекта является создание образовательного сайта, который систематизирует и наглядно представляет разнообразные методы измерения физических величин (таких как расстояние до Луны, размер Земли, масса Солнца и т.д.), а также предоставляет возможность сообществу пользователей дополнять сайт новыми способами измерений.", link:"https://student1287-netizen.github.io/progect4/", photo:"", pdf:"" },
+        { num:2, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
+        { num:3, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
+        { num:4, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
+        { num:5, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
+        { num:6, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
+        { num:7, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
+        { num:8, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
+        { num:9, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
+        { num:10, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
+        { num:11, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
+        { num:12, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
+        { num:13, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
+        { num:14, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
+        { num:15, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
+        { num:16, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
+        { num:17, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
+        { num:18, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
+        { num:19, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
+        { num:20, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
+        { num:21, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
+        { num:22, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
+        { num:23, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
+        { num:24, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
+        { num:25, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
+        { num:26, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
+        { num:27, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
+        { num:28, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
+        { num:29, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
+        { num:30, title:"", author:"", info:"", link:"", photo:"", pdf:"" }
+    ];
+
+
+    
+    const mainScreen = document.getElementById("mainScreen");
+    const projectScreen = document.getElementById("projectScreen");
+    const projectContent = document.getElementById("projectContent");
+    const buttonsGrid = document.getElementById("buttonsGrid");
+
+  
+    for (let i = 0; i < projects.length; i++) {
+        const p = projects[i];
+        const btn = document.createElement("button");
+        btn.className = "project-btn";
+        
+        
+        if (p.title && p.title !== "") {
+            btn.textContent = p.num + ". " + p.title;
+        } else {
+            btn.textContent = "Проект №" + p.num;
+        }
+        
+        btn.onclick = (function(projectData) {
+            return function() { showProject(projectData); };
+        })(p);
+        buttonsGrid.appendChild(btn);
+    }
+
+    
+    window.showMain = function() {
+        mainScreen.style.display = "block";
+        projectScreen.style.display = "none";
+    };
+
+   
+    function showProject(proj) {
+        
+        
+        let projectTitle = proj.title;
+        if (!projectTitle || projectTitle === "") {
+            projectTitle = "Проект №" + proj.num;
+        }
+        
+        
+        let authorName = proj.author;
+        if (!authorName || authorName === "") {
+            authorName = "Не указан";
+        }
+        
+       
+        let projectInfo = proj.info;
+        if (!projectInfo || projectInfo === "") {
+            projectInfo = "Информация о проекте будет добавлена позже.";
+        }
+        
+        let photoHtml = "";
+        if (proj.photo && proj.photo !== "") {
+            photoHtml = `<div class="photo"><img src="${proj.photo}" alt="${proj.title}"></div>`;
+        } else {
+            photoHtml = `<div class="photo"><div style="background:#e2e8f0; padding:40px; border-radius:16px;"> Нет фото</div></div>`;
+        }
+        
+        let linkHtml = "";
+        if (proj.link && proj.link !== "") {
+            linkHtml = `<a href="${proj.link}" target="_blank" class="link-btn">Перейти на реализованный проект!</a>`;
+        }
+        
+       
+        let pdfHtml = "";
+        if (proj.pdf && proj.pdf !== "") {
+            pdfHtml = `<a href="${proj.pdf}" target="_blank" class="pdf-btn"> Полное описание (PDF)</a>`;
+        }
+        
+       
+        const buttonsRow = `
+            <div class="buttons-row">
+                ${linkHtml}
+                ${pdfHtml}
+            </div>
+        `;
+        
+        const fullHtml = `
+            <h2 style="margin-top:0;">${projectTitle}</h2>
+            <div class="info-box"><strong> Автор:</strong> ${authorName}</div>
+            ${photoHtml}
+            <div class="info-box">
+                <strong> Общая информация: </strong><br>
+                ${projectInfo}
+            </div>
+            ${buttonsRow}
+        `;
+        
+        projectContent.innerHTML = fullHtml;
+        
+        mainScreen.style.display = "none";
+        projectScreen.style.display = "block";
+    }
+</script>
+</body>
+</html>
