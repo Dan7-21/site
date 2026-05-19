@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Проекты 10В класса</title>
+    <title> Проекты 10В класса </title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -37,6 +37,7 @@
             transform: scale(1.02);
         }
         
+        
         .detail-page {
             background: white;
             border-radius: 20px;
@@ -58,7 +59,7 @@
         .back-btn:hover {
             background: #1e293b;
         }
-        .photo {
+        .photo, .video-container {
             text-align: center;
             margin: 20px 0;
         }
@@ -66,6 +67,12 @@
             max-width: 100%;
             border-radius: 16px;
             max-height: 300px;
+        }
+        .video-container video {
+            max-width: 100%;
+            border-radius: 16px;
+            max-height: 300px;
+            background: #000;
         }
         .info-box {
             background: #f8fafc;
@@ -110,6 +117,11 @@
             color: #475569;
             margin-bottom: 30px;
         }
+        .media-label {
+            font-size: 0.8rem;
+            color: #64748b;
+            margin-bottom: 5px;
+        }
     </style>
 </head>
 <body>
@@ -132,38 +144,40 @@
 
 <script>
 
-   
+  
     const projects = [
-        { num:1, title:"Методы измерения физических величин", author:"Юрий Чекглаков", info:"Целью настоящего проекта является создание образовательного сайта, который систематизирует и наглядно представляет разнообразные методы измерения физических величин (таких как расстояние до Луны, размер Земли, масса Солнца и т.д.), а также предоставляет возможность сообществу пользователей дополнять сайт новыми способами измерений.", link:"https://student1287-netizen.github.io/progect4/", photo:" Yuri.jpg ", pdf:"" },
-        { num:2, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
-        { num:3, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
-        { num:4, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
-        { num:5, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
-        { num:6, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
-        { num:7, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
-        { num:8, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
-        { num:9, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
-        { num:10, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
-        { num:11, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
-        { num:12, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
-        { num:13, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
-        { num:14, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
-        { num:15, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
-        { num:16, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
-        { num:17, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
-        { num:18, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
-        { num:19, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
-        { num:20, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
-        { num:21, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
-        { num:22, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
-        { num:23, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
-        { num:24, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
-        { num:25, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
-        { num:26, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
-        { num:27, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
-        { num:28, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
-        { num:29, title:"", author:"", info:"", link:"", photo:"", pdf:"" },
-        { num:30, title:"", author:"", info:"", link:"", photo:"", pdf:"" }
+        { num:1, title:"Методы измерения физических величин", author:"Юрий Чекглаков", info:"Целью настоящего проекта является создание образовательного сайта, который систематизирует и наглядно представляет разнообразные методы измерения физических величин (таких как расстояние до Луны, размер Земли, масса Солнца и т.д.), а также предоставляет возможность сообществу пользователей дополнять сайт новыми способами измерений.", link:"https://student1287-netizen.github.io/progect4/", photo:"Yuri.jpg", video:"", pdf:"" },
+     
+        
+        { num:2, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
+        { num:3, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
+        { num:4, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
+        { num:5, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
+        { num:6, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
+        { num:7, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
+        { num:8, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
+        { num:9, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
+        { num:10, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
+        { num:11, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
+        { num:12, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
+        { num:13, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
+        { num:14, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
+        { num:15, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
+        { num:16, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
+        { num:17, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
+        { num:18, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
+        { num:19, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
+        { num:20, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
+        { num:21, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
+        { num:22, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
+        { num:23, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
+        { num:24, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
+        { num:25, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
+        { num:26, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
+        { num:27, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
+        { num:28, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
+        { num:29, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
+        { num:30, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" }
     ];
 
 
@@ -178,8 +192,8 @@
         const p = projects[i];
         const btn = document.createElement("button");
         btn.className = "project-btn";
-        
-        
+      
+      
         if (p.title && p.title !== "") {
             btn.textContent = p.num + ". " + p.title;
         } else {
@@ -201,7 +215,7 @@
    
     function showProject(proj) {
         
-        
+      
         let projectTitle = proj.title;
         if (!projectTitle || projectTitle === "") {
             projectTitle = "Проект №" + proj.num;
@@ -219,25 +233,47 @@
             projectInfo = "Информация о проекте будет добавлена позже.";
         }
         
-        let photoHtml = "";
-        if (proj.photo && proj.photo !== "") {
-            photoHtml = `<div class="photo"><img src="${proj.photo}" alt="${proj.title}"></div>`;
-        } else {
-            photoHtml = `<div class="photo"><div style="background:#e2e8f0; padding:40px; border-radius:16px;"> Нет фото</div></div>`;
+        
+        let mediaHtml = "";
+        
+        
+        if (proj.video && proj.video !== "") {
+            
+            mediaHtml = `
+                <div class="video-container">
+                    <div class="media-label"> Видеопрезентация проекта</div>
+                    <video controls>
+                        <source src="${proj.video}" type="video/mp4">
+                        Ваш браузер не поддерживает тег video.
+                    </video>
+                </div>
+            `;
         }
+       
+        else if (proj.photo && proj.photo !== "") {
+            
+            mediaHtml = `
+                <div class="photo">
+                    <div class="media-label"> Изображение проекта</div>
+                    <img src="${proj.photo}" alt="${projectTitle}">
+                </div>
+            `;
+        }
+       
+        
         
         let linkHtml = "";
         if (proj.link && proj.link !== "") {
-            linkHtml = `<a href="${proj.link}" target="_blank" class="link-btn">Перейти на реализованный проект!</a>`;
+            linkHtml = `<a href="${proj.link}" target="_blank" class="link-btn"> Перейти на реализованный проект!</a>`;
         }
         
-       
+        
         let pdfHtml = "";
         if (proj.pdf && proj.pdf !== "") {
             pdfHtml = `<a href="${proj.pdf}" target="_blank" class="pdf-btn"> Полное описание (PDF)</a>`;
         }
         
-       
+      
         const buttonsRow = `
             <div class="buttons-row">
                 ${linkHtml}
@@ -248,9 +284,9 @@
         const fullHtml = `
             <h2 style="margin-top:0;">${projectTitle}</h2>
             <div class="info-box"><strong> Автор:</strong> ${authorName}</div>
-            ${photoHtml}
+            ${mediaHtml}
             <div class="info-box">
-                <strong> Общая информация: </strong><br>
+                <strong>Общая информация:</strong><br>
                 ${projectInfo}
             </div>
             ${buttonsRow}
