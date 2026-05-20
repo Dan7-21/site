@@ -122,6 +122,34 @@
             color: #64748b;
             margin-bottom: 5px;
         }
+        .repo-btn {
+    display: inline-block;
+    background: #10b981;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    margin: 10px 10px 10px 0;
+    font-size: 14px;
+}
+        .repo-btn:hover {
+    background: #059669;
+}
+
+        .presentation-btn {
+    display: inline-block;
+    background: #f59e0b;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    margin: 10px 10px 10px 0;
+    font-size: 14px;
+}
+        .presentation-btn:hover {
+    background: #d97706;
+}
+        
     </style>
 </head>
 <body>
@@ -146,40 +174,57 @@
 
   
     const projects = [
-        { num:1, title:"Методы измерения физических величин", author:"Юрий Чекглаков", info:"Целью настоящего проекта является создание образовательного сайта, который систематизирует и наглядно представляет разнообразные методы измерения физических величин (таких как расстояние до Луны, размер Земли, масса Солнца и т.д.), а также предоставляет возможность сообществу пользователей дополнять сайт новыми способами измерений.", link:"https://student1287-netizen.github.io/progect4/", photo:"Yuri.jpg", video:"", pdf:"" },
+        { num:1, title:"Методы измерения физических величин",
+         author:"Юрий Чекглаков", 
+         info:"Целью настоящего проекта является создание образовательного сайта, который систематизирует и наглядно представляет разнообразные методы измерения физических величин (таких как расстояние до Луны, размер Земли, масса Солнца и т.д.), а также предоставляет возможность сообществу пользователей дополнять сайт новыми способами измерений.", 
+         link:"https://student1287-netizen.github.io/progect4/",
+         photo:"Yuri.jpg", 
+         video:"",
+         pdf:"" ,
+         repository: "",
+         presentation: ""},
      
+        { num:2, title:"Исследование проявлений золотого сечения в различных системах", author:"Александров Денис, Бонарцев Павел", info:"Цель проекта – доказать, что золотое сечение (в частности, золотой угол 137,5°) является универсальным принципом оптимальности, возникающим в природных системах в процессе эволюции.", link:"https://t.me/golden_rated_bot?authuser=0", photo:"", video:"", pdf:"" , repository: "https://github.com/pavelbonartsev/phyllotaxis", presentation: ""},
         
-        { num:2, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
-        { num:3, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
-        { num:4, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
-        { num:5, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
-        { num:6, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
-        { num:7, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
-        { num:8, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
-        { num:9, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
-        { num:10, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
-        { num:11, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
-        { num:12, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
-        { num:13, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
-        { num:14, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
-        { num:15, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
-        { num:16, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
-        { num:17, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
-        { num:18, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
-        { num:19, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
-        { num:20, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
-        { num:21, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
-        { num:22, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
-        { num:23, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
-        { num:24, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
-        { num:25, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
-        { num:26, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
-        { num:27, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
-        { num:28, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
-        { num:29, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" },
-        { num:30, title:"", author:"", info:"", link:"", photo:"", video:"", pdf:"" }
-    ];
-
+        { num:3, title:"ТГ-бот Преобразование текста с фотографий", author:"Битков Сергей", info:"Проект направлен на создание инструмента, который позволяет пользователям извлекать текст из фотографий и сканированных документов. В ходе работы была проведена оценка существующих технологий OCR, выбраны наиболее эффективные алгоритмы и библиотеки для реализации. ", link:"@photoconversionbot", photo:"", video:"", pdf:"", repository: "https://github.com/Sergeybitkov/proekt-tgbot-photo-conversion", presentation: "" },
+        
+        { num:4, title:"Тест на знание произведения 'Преступление и наказание' со справочным материалом", author:"Васильева Елизавета", info:"Telegram-бот, который пробудит интерес к чтению романа Ф. М. Достоевского «Преступление и наказание», а также проверит ваши знания о произведении.", link:": t.me/Rodion_Raskolnikov_bot", photo:"", video:"", pdf:"" , repository: "", presentation: ""},
+        
+        { num:5, title:"ТГ бот для подсчета калорий", author:"Геворкян Баграт, Овсянников Андрей", info:"Проект представляет собой Telegram-бота для упрощения контроля питания. Пользователь вводит описание еды или отправляет фотографию, после чего бот определяет продукты, оценивает их количество и рассчитывает общую калорийность.", link:"https://t.me/CalorieAI192_Bot?authuser=0", photo:"", video:"", pdf:"" , repository: "https://github.com/teawlue/CalorieAI-Bot", presentation: ""},
+        
+        { num:6, title:"Геометрия? Разберем!", author:"Донская Анна", info:"Этот сайт создан для тех, кто хочет систематизировать знания по геометрии, готовится к экзаменам, ищет понятный и структурированный теоретический материал или желает проверить и укрепить свои знания по определённой теме.", link:"https://ankadon.github.io/school_project/", photo:"", video:"", pdf:"", repository: "https://github.com/AnkaDon/school_project", presentation: "" },
+        
+        { num:7, title:"Музей школы 192", author:"Захаркина Мария, Ларионова Виктория", info:"Веб‐сайт, который станет централизованной цифровой платформой для хранения, систематизации и предоставления доступа к архивным материалам образовательной организации.", link:"https://astronautsus.github.io/individual-project-/", photo:"", video:"", pdf:"", repository: "https://github.com/astronautsus/individual-project-/", presentation: "" },
+        
+        { num:8, title:"Сайт Помощник по бильярду", author:"Илюхин Иван", info:" Сайт, помогающий людям изучить бильярд как спорт.", link:"http://student25003.github.io/bilweb", photo:"", video:"", pdf:"" , repository: "https://github.com/student25003/bilweb", presentation: ""},
+        
+        { num:9, title:"Программный интерфейс Анализ движений мыши", author:"Китаев Никита, Сухинин Юрий", info:"Целью настоящего проекта является создание графического интерфейса для удобства использования программы анализа поведения мыши.", link:"", photo:"", video:"", pdf:"" , repository: "https://drive.google.com/drive/folders/10pqA42N6f-50cCS9gHewRs8GGHKoZZhG", presentation: ""},
+        
+        { num:10, title:"MiceDB", author:"Ковалев Степан, Рожок Владимир", info:"Новая база данных и визуальный интерфейс, оформленный в виде сайта, для лаборатории Института Проблем Передачи Информации РАН.", link:"", photo:"", video:"", pdf:"", repository: "https://github.com/DaregonPL/ippi_micedb", presentation: "" },
+        
+        { num:11, title:"Вера. Надежда. Любовь", author:"Коваленко Василиса", info:"создание костюмов одежды женского гардероба для посещения праздничных православных служб.", link:"", photo:"", video:"", pdf:"", repository: "", presentation: "" },
+        
+        { num:12, title:"", author:"Копцев Петр", info:"", link:"", photo:"", video:"", pdf:"", repository: "", presentation: "" },
+        
+        { num:13, title:"Влияние социальных сетей на современное общество", author:"Красненкова Полина, Лубенец Дарья", info:"Анализ влияния социальных сетей на жизнь современного общества для выработки рекомендаций по минимизации негативных последствий.", link:"https://docs.google.com/forms/d/1rPIksMdLm316Ki4oE3o2JVTpt8O6MVNKayNwZxNN92Y/edit", photo:"", video:"", pdf:"" , repository: "", presentation: ""},
+        
+        { num:14, title:"Оптимизация школьной библиотеки", author:"Мельникова Мария, Плужник Виктория", info:"Telegram-бот для автоматизации учёта выдачи и возврата учебников в школьной библиотеке.", link:"https://t.me/library192_bot", photo:"", video:"", pdf:"" , repository: "https://github.com/pluzhnikvr03/School_project?", presentation: ""},
+        
+        { num:15, title:"ТГ-бот для управления задачами и формирования полезных привычек", author:"Петрушин Лука", info:"Тг-бот-помощник для организации ежедневных задач и отслеживания полезных привычек.", link:"https://t.me/TaskMasterHelper3274Bot", photo:"", video:"", pdf:"" , repository: "https://github.com/feelweakk/HabitBot", presentation: ""},
+        
+        { num:16, title:"Сайт с проектами 10В класса", author:"Попов Даниял", info:"Сайт для хранения и удобного просмотра всех проектов 10В класса 2025/26 года с привидением всех данных о проекте", link:"https://dan7-21.github.io/site/", photo:"", video:"", pdf:"" , repository: "", presentation: ""},
+        
+        { num:17, title:"Распознавание особей птиц по голосу", author:"Романов Иван, Тарасов Алексей", info:" Программа для распознавания конкретных особей птиц по голосу.", link:"", photo:"", video:"", pdf:"", repository: "https://github.com/AlexeyTheWarthunder/bird_voice_recognition", presentation: "" },
+        
+        { num:18, title:"ТГ бот “Расчет параметров орбит планет в системе с одной звездой”", author:"Садовский Алексей", info:"В современном мире астрономии и астрофизики людям часто приходитсявыполнять различные расчеты связанные с движением планет и других небесных тел. Одной из таких задач является вычисление параметров орбит эти расчеты помогают определить большую полуось, орбитальную скорость и константу Кеплера для данной системы звезды. Однако вычисление параметров орбит вручную может быть достаточно сложным и муторным, особенно для школьников,которые только начинают изучать физику и астрономию. Не всегда удобно всегда использовать формулы и выполнять расчеты самостоятельно. Кроме того,на данный момент подобных программ не существует. Боты в мессенджере Telegram - удобное современное и всем доступное средство обмена информацией, организации процессов.В данной работе рассматривается создание telegram-бота дляпроизведения расчетов.Такой бот позволит пользователю ввести данные ибыстро получить результат.", link:"https://t.me/pframetersexoplanetbot", photo:"", video:"", pdf:"" , repository: "https://github.com/ASadovs1488/parametrs-orbits-planets/tree/main", presentation: ""},
+        
+        { num:19, title:"Действия В. И. Ленина в первый год гражданской войны", author:"Тонтоев  Саян", info:"Наша главная цель - не просто рассказать о событиях прошлого, а создать современный и увлекательный инструмент, который поможет по-новому взглянуть на историю. Таким инструментом стал наш Telegram-бот. Через формат викторины мы хотим сделать изучение сложного периода Гражданской войны интересным и значимым для каждого пользователя. ", link:"https://t.me/questleninbot", photo:"", video:"", pdf:"" , repository: "", presentation: ""},
+        
+        { num:20, title:"ТГ-бот 'напоминалка'", author:"Черкашин Артем", info:"Есть проблема: люди постоянно забывают дела, встречи, задачи. Нужен простой инструмент для напоминаний, который всегда под рукой. Это актуально потому, что все пользуются Telegram — значит, напоминания будут приходить туда, где пользователи проводят много времени, существующие аналоги либо слишком сложные, либо слишком ограниченные нужен простой бот без лишних функций — выбрать месяц, день, время и написать текст заметки.", link:"https://t.me/rem1nder96_bot", photo:"", video:"", pdf:"" , repository: "https://github.com/hellogromi/reminder_tg_bot", presentation: ""},
+        
+    
+        
+        
 
     
     const mainScreen = document.getElementById("mainScreen");
@@ -272,15 +317,27 @@
         if (proj.pdf && proj.pdf !== "") {
             pdfHtml = `<a href="${proj.pdf}" target="_blank" class="pdf-btn"> Полное описание (PDF)</a>`;
         }
+       
+        let repoHtml = "";
+        if (proj.repository && proj.repository !== "") {
+            repoHtml = `<a href="${proj.repository}" target="_blank" class="repo-btn">💻 Репозиторий проекта</a>`;
+        }
+
+
+        let presentationHtml = "";
+        if (proj.presentation && proj.presentation !== "") {
+    presentationHtml = `<a href="${proj.presentation}" target="_blank" class="presentation-btn">🎯 Презентация (PDF)</a>`;
+        }
         
       
-        const buttonsRow = `
-            <div class="buttons-row">
-                ${linkHtml}
-                ${pdfHtml}
-            </div>
-        `;
-        
+  const buttonsRow = `
+    <div class="buttons-row">
+        ${linkHtml}
+        ${repoHtml}
+        ${pdfHtml}
+        ${presentationHtml}
+    </div>
+`;
         const fullHtml = `
             <h2 style="margin-top:0;">${projectTitle}</h2>
             <div class="info-box"><strong> Автор:</strong> ${authorName}</div>
